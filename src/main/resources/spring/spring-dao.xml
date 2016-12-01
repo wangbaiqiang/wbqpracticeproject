@@ -9,7 +9,7 @@
     <!--配置数据库相关参数 一般properties里面
     properties属性${}的形式
     -->
-    <context:property-placeholder location="classpath:spring/jdbc.properties"/>
+    <context:property-placeholder location="classpath:jdbc.properties"/>
     <!--配置数据库的连接池  c3p0-->
     <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
         <!--配置连接池属性-->

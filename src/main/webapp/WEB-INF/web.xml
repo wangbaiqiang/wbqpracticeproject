@@ -3,9 +3,21 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
 		 http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
          version="3.1"
-         metadata-complete="true">
-        
-
-
+         metadata-complete="true"><!--修改servlet版本为3.1-->
+        <!--配置DispatchServlet-->
+<servlet>
+    <servlet-name>seckill-dispatcher</servlet-name>
+    <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+    <!--配置springmvc需要加载的配置文件-->
+    <init-param><!--contextConfigLocation告诉spring我有那些配置文件-->
+        <param-name>contextConfigLocation</param-name>
+        <param-value>classpath:spring/spring-*.xml</param-value>
+    </init-param>
+</servlet>
+<servlet-mapping>
+    <servlet-name>seckill-dispatcher</servlet-name>
+    <!--匹配所有的请求 *.do最早的struct2就是这种 丑陋的配置 restful url不需要有任何不好的结尾-->
+    <url-pattern>/</url-pattern>
+</servlet-mapping>
 
 </web-app>
